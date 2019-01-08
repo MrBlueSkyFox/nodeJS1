@@ -5,7 +5,8 @@ import {deleteItemSuccess, getItemSuccess, updateItemSuccess} from "../actions/i
 
 export const uI = (item) => {
     return axios.put(
-        'http://localhost:8080/items',
+        //'http://localhost:8080/items',
+        'https://rocky-ocean-61771.herokuapp.com/items',
         {item})
     .then(response => {
         console.log(response)
