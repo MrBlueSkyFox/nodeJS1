@@ -9,16 +9,24 @@ var con = mysql.createConnection({
 
 var Task_books={
     getAllTask:function (callback) {
+        console.log("***START getAllBooks");
         return con.query("SELECT * FROM books",callback);
     },
-    addTask:function (Task,callback) {
+    addTaskS:function (Task,callback) {
         return con.query("INSERT INTO books(BookName) values(?)",[Task.BookName],callback);
+
+    },
+    addTask:function (Task,callback) {
+        return con.query("INSERT INTO books(BookName,Price) values(?,?)",[Task.BookName,Task.Price],callback);
+
     },
     deleteTask:function (Task,callback) {
         return con.query("Delete from books WHERE idbooks=?",[Task.idbooks],callback)
     },
     updateTask:function (Task,callback) {
-        return con.query("UPDATE books SET BookName=? where idbooks=?",[Task.BookName,Task.idbooks],callback);
+        return con.query(
+            "UPDATE books SET BookName = ?, Price = ?  where idbooks=?",
+            [Task.BookName,Task.Price,Task.idbooks],callback);
     }
 
 };
