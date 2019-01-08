@@ -2,8 +2,12 @@
   "name": "nodejs",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "runs": "node ./bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -22,6 +26,14 @@
   "description": "attempt to do smth new",
   "main": "server.js",
   "devDependencies": {},
-  "author": "",
-  "license": "ISC"
+  "author": "Tigran",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrBlueSkyFox/nodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrBlueSkyFox/nodeJS/issues"
+  },
+  "homepage": "https://github.com/MrBlueSkyFox/nodeJS#readme"
 }
