@@ -6,7 +6,7 @@ const checkAuth = require('../middleware/check-auth');
 
 router.get('/',(req,res,next)=>{
     console.log("***1*** Start GET items");
-    Task.getAllTask(function (err,rows) {
+/*    Task.getAllTask(function (err,rows) {
         if(err){ res.json(err);}
         else{
             return res.json(rows);
@@ -15,7 +15,9 @@ router.get('/',(req,res,next)=>{
     }
 
 
-    });
+    });*/
+console.log(Task.getAllTask());
+return  res.json(Task.getAllTask());
     console.log("***2*** Finish GET items");
 });
 

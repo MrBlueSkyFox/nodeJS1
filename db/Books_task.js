@@ -1,5 +1,6 @@
 var mysql = require('mysql');
-
+//import d from './tes'
+const sd=require('./tes')
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -8,10 +9,15 @@ var con = mysql.createConnection({
 });
 
 var Task_books={
-    getAllTask:function (callback) {
+ /*   getAllTask:function (callback) {
         console.log("***START getAllBooks");
         return con.query("SELECT * FROM books",callback);
-    },
+    },*/
+    getAllTask:function () {
+        console.log("***START getAllBooks");
+        return (sd);
+    }
+    ,
     addTaskS:function (Task,callback) {
         return con.query("INSERT INTO books(BookName) values(?)",[Task.BookName],callback);
 
