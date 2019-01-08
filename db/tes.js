@@ -1,4 +1,4 @@
-var bks=  [
+var bks = [
     {
         idbooks: "1",
         BookName: "First",
@@ -23,4 +23,6 @@ var bks=  [
     },
 
 ];
-module.exports=bks;
+
+
+module.exports = bks;

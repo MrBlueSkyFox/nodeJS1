@@ -10,6 +10,7 @@ var con = mysql.createConnection({
 
 var Task_user = {
     getAllTask: function (callback) {
+        console.log(con.query("SELECT * FROM Users", callback));
         return con.query("SELECT * FROM Users", callback);
     },
     addTask: function (Task_user, pas,callback) {
