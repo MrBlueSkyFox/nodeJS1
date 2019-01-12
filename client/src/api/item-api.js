@@ -43,7 +43,8 @@ export function upItems(item){
 
 export const getItems = () => {
     return axios.get(
-        'http://localhost:8080/items'
+        /*'http://localhost:8080/items',*/
+        "https://rocky-ocean-61771.herokuapp.com/items"
     ).then(response => {
         store.dispatch(getItemSuccess(response.data));
         return response;

@@ -9,15 +9,15 @@ var con = mysql.createConnection({
 });
 
 var Task_books={
- /*   getAllTask:function (callback) {
+    getAllTask:function (callback) {
         console.log("***START getAllBooks");
         return con.query("SELECT * FROM books",callback);
-    },*/
-    getAllTask:function () {
+    },
+  /*  getAllTask:function () {
         console.log("***START getAllBooks");
         return (sd);
     }
-    ,
+    ,*///mock data
     addTaskS:function (Task,callback) {
         return con.query("INSERT INTO books(BookName) values(?)",[Task.BookName],callback);
 

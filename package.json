@@ -6,8 +6,8 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "runs": "node ./bin/www"
+    "start2": "nodemon server",
+    "runs2": "node server"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -17,14 +17,14 @@ var Task_user = {
         return con.query("INSERT INTO Users(name,password,_password) values(?,?,?)",
             [Task_user.name, Task_user.password,pas], callback);
     },
-   /* findName: function (Task_user, callback) {
+    findName: function (Task_user, callback) {
         return con.query("SELECT * FROM Users WHERE name = ?", Task_user.name, callback);
-    },*/
-     findName: function (Task_user, callback) {
+    },
+   /*  findName: function (Task_user, callback) {
         console.log(DB.find(DB.name===Task_user.name));
          return DB.find(DB.name===Task_user.name);
        return con.query("SELECT * FROM Users WHERE name = ?", Task_user.name, callback);
-   },
+   },*///mock data
     deleteTask: function (Task_user, callback) {
         return con.query("Delete from books WHERE id=?", [Task_user.id], callback)
     },

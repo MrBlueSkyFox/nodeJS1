@@ -46,5 +46,9 @@ server.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+server.get('/', (req, res) => res.send(`Hello World!`));
+server.listen(8888, () => {
+    console.log(`Example app listening on port 8888!`)
+})
 
 module.exports = server;
