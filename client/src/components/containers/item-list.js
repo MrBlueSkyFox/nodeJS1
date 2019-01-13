@@ -4,6 +4,7 @@ import * as ItemApi from '../../api/item-api'
 import {Link} from 'react-router-dom'
 import {bindActionCreators} from "redux";
 import {deleteItem} from "../../api/item-api";
+const I18n = require('react-redux-i18n').I18n;
 
 class ItemList extends Component {
     constructor(props) {
@@ -39,21 +40,21 @@ class ItemList extends Component {
                     onClick={this.deleteItemFromList.bind(this, prod)}
                     className='btn btn-primary'
                 >
-                    Delete Now!
+                    {I18n.t('buttons.delete')}
                 </button>
             </p>
             <p className='itemButton'>
-                <Link className="itemButton" to="/add">Add Book</Link>
+                <Link className="itemButton" to="/add">{I18n.t('buttons.buy')   }</Link>
                 <Link className="itemButton" to={{
                     pathname: "/edit",
                     state: {index}
                 }}
-                      onClick={refCallBack}>Edit Book</Link>
+                      onClick={refCallBack}>{I18n.t('buttons.edit')}</Link>
             </p>
             </div>
         )
         const guestButton = (
-            <h5>Good Book</h5>
+            <h5>{I18n.t('welcome.mock')}</h5>
         )
         return (
             <div className='col-sm-2 col-lg-2 col-md-2 book-list' key={index}>
@@ -101,6 +102,7 @@ const mapStateToProps = (store) => {
     return {
         product: store.products.items,
         auth: store.auth,
+        i18n: store.i18n
     };
 };
 

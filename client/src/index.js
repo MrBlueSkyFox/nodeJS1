@@ -10,8 +10,27 @@ import setAuthToken from "./setAuthToken";
 import {logoutUser, setCurrentUser} from "./api/auth";
 import jwt_decode from 'jwt-decode';
 
+/*Билблиотеки локализации с помощью шаблонов*/
+import {I18nextProvider,withNamespaces } from "react-i18next";
+import i18next from "i18next"
+import com_ru from "./translations/ru"
+import com_en from "./translations/en"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+/*i18next.init({
+    debug: true,
+    interpolation: {escapeValue: false},  // React already does escaping
+    lng: 'ru',
+    resources: {
+        en: {
+            common: com_en
+        },
+        ru: {
+            common: com_ru
+        },
+    },
+});*/
+//<I18nextProvider i18n={i18next}>
 if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
     const decoded = jwt_decode(localStorage.jwtToken);
@@ -27,8 +46,11 @@ if (localStorage.jwtToken) {
 
 ReactDOM.render(
     <Provider store={store}>
-        {App}
-    </Provider>,
+
+            {App}
+
+    </Provider>
+    ,
     document.getElementById('root')
 );
 
